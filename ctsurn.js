@@ -3,7 +3,7 @@
  * URN's.
  */
 //var urn = new CTSUrn("urn:cts:greekLit:tlg0012.tlg001.msA:1.1");
-//var urn = new CTSUrn("urn:cts:greekLit:tlg0012:1.1@α-2.1@β[5]");
+//var urn = new CTSUrn("urn:cts:greekLit:tlg0012:");
 
 /**
  * Creates a new CTSUrn object from the provided String.
@@ -43,6 +43,8 @@ function CTSUrn(urn) {
     this.passage.print = function(){
         return this.length == 1 ? this[0].print() : this[0].print() + "-" + this[1].print();
     }
+    //Define a range test
+    this.passage.isRange = function(){return this.length > 1;}
 
     
     /**
@@ -51,6 +53,8 @@ function CTSUrn(urn) {
     this.print = this.toString = function(){
         return "urn:" + this.protocol + ":" + this.namespace + ":" + this.work.print() + ":" + this.passage.print();
     }
+    //Normalize the print version to remove any non-parsed data
+    this.urn = this.print();
 
     /**
      * Anonymous worker function that is hidden from the outside world. Used to deconstruct the
