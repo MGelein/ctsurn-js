@@ -1,8 +1,6 @@
 /**
  * Contains a basic CTS URN library for manipulation of the
- * URN's.
- */
-//var urn = new CTSUrn("urn:cts:greekLit:tlg0012.tlg001.msA:1.1");
+//var urn = new CTSUrn("urn:cts:greekLit:tlg0012.tlg001.msA:1.1@α[3]-1.5@ε[2]");
 //var urn = new CTSUrn("urn:cts:greekLit:tlg0012:");
 
 /**
